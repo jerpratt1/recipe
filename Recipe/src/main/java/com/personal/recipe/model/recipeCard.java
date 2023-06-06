@@ -1,7 +1,5 @@
 package com.personal.recipe.model;
 
-import java.awt.*;
-
 public class RecipeCard {
     private String recipeTitle;
     private String recipeImageURL;
@@ -9,26 +7,31 @@ public class RecipeCard {
     private int prepTime;
     private int cookTime;
     private int restTime;
-    private List ingredients;
-    private List instructions;
-    private List notes;
+    private int servingSize;
+    private String tools;
+    private String ingredients;
+    private String instructions;
+    private String notes;
+    private String keyWords;
 
-    public RecipeCard(String recipeTitle, String recipeImageURL, String recipeDescription, int prepTime, int cookTime, int restTime, List ingredients, List instructions, List notes) {
+    public RecipeCard() {
+
+    }
+
+    public RecipeCard(String recipeTitle, String recipeImageURL, String recipeDescription, int prepTime, int cookTime, int restTime, int servingSize, String tools, String ingredients, String instructions, String notes, String keyWords) {
         this.recipeTitle = recipeTitle;
         this.recipeImageURL = recipeImageURL;
         this.recipeDescription = recipeDescription;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
         this.restTime = restTime;
+        this.servingSize = servingSize;
+        this.tools = tools;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.notes = notes;
+        this.keyWords = keyWords;
     }
-
-    public RecipeCard() {
-
-    }
-
 
     public String getRecipeTitle() {
         return recipeTitle;
@@ -78,27 +81,51 @@ public class RecipeCard {
         this.restTime = restTime;
     }
 
-    public List getIngredients() {
+    public int getServingSize() {
+        return servingSize;
+    }
+
+    public void setServingSize(int servingSize) {
+        this.servingSize = servingSize;
+    }
+
+    public String getTools() {
+        return tools;
+    }
+
+    public void setTools(String tools) {
+        this.tools = tools;
+    }
+
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
-    public List getInstructions() {
+    public String getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(List instructions) {
+    public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
 
-    public List getNotes() {
+    public String getNotes() {
         return notes;
     }
 
-    public void setNotes(List notes) {
+    public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getKeyWords() {
+        return keyWords;
+    }
+
+    public void setKeyWords(String keyWords) {
+        this.keyWords = keyWords;
     }
 }
