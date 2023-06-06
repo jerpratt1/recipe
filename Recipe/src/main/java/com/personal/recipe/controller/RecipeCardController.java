@@ -17,7 +17,8 @@ public class RecipeCardController {
 
     @RequestMapping(path = "/recipe", method = RequestMethod.GET)
     public RecipeCard getRecipe() {
-        return null;
+        RecipeCard recipeCard = recipeCardDao.getRecipe();
+        return recipeCard;
     }
 
     @RequestMapping(path = "/recipe", method = RequestMethod.POST)
