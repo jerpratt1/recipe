@@ -12,7 +12,7 @@
 	<artifactId>recipe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>recipe</name>
-	<description>Corrected Recipe </description>
+	<description>fixed spring</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -26,6 +26,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

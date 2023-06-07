@@ -17,10 +17,10 @@ public class JdbcRecipeCardDao implements RecipeCardDao {
     @Override
     public RecipeCard getRecipe() {
         RecipeCard recipeCard = new RecipeCard();
-        String sql = "SELECT * FROM recipe WHERE recipe_id =1;";
+        String sql = "SELECT * FROM recipe WHERE recipe_id = 1;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
         if(result.next()){
-            recipeCard.setRecipeTitle(result.getString("recipe_title"));
+            recipeCard = mapRowToTransferForRecipeCard(result);
             return recipeCard;
         }
         return null;
@@ -40,5 +40,25 @@ public class JdbcRecipeCardDao implements RecipeCardDao {
     @Override
     public RecipeCard deleteRecipe() {
         return null;
+    }
+
+    private RecipeCard mapRowToTransferForRecipeCard (SqlRowSet result){
+        RecipeCard recipeCard = new RecipeCard();
+
+        recipeCard.setRecipeTitle(result.getString("recipe_title"));
+        recipeCard.setRecipeImageURL(result.getString("recipe_image_url"));
+        recipeCard.setRecipeDescription(result.getString("recipe_description"));
+        recipeCard.setPrepTime(result.getInt("prep_time"));
+        recipeCard.setCookTime(result.getInt("cook_time"));
+        recipeCard.setRestTime(result.getInt("rest_time"));
+        recipeCard.setServingSize(result.getInt("serving_size"));
+        recipeCard.setTools(result.getString("tools"));
+        recipeCard.setIngredients(result.getString("ingredients"));
+        recipeCard.setInstructions(result.getString("instructions"));
+        recipeCard.setNotes(result.getString("notes"));
+        recipeCard.setKeyWords(result.getString("keywords"));
+
+
+        return recipeCard;
     }
 }
