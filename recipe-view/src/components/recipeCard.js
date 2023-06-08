@@ -1,14 +1,16 @@
-import { recipeCard, GetRecipe } from '../Data';
+import { recipeCard, testCard } from '../Data';
+import getRecipe from '../RecipeService'
+/* import axios from 'axios'; */
 
-function RecipeCard() {
+function RecipeCard( ) {
     return (
         <main>
             <div>
-                <h1> {recipeCard.recipeTitle} </h1>
+                <h1> {testCard.recipeTitle} </h1>
                 <h2>{recipeCard.recipeDescription} </h2>
-                <img href={recipeCard.recipeImageURL} alt='test'/>
+                <img href={recipeCard.recipeImageURL}  alt='test'/>
                 <div>
-                    <ul class = "no">
+                    <ul className = "no">
                     <li>Prep Time: {recipeCard.prepTime} minutes</li>
                     <li>Cook Time: {recipeCard.cookTime} minutes</li>
                     <li>Rest Time: {recipeCard.restTime} minutes</li>
@@ -20,9 +22,31 @@ function RecipeCard() {
                 {recipeCard.instructions}
                 {recipeCard.notes}
             </div>
-            <button onClick={GetRecipe}> Populate Recipe</button>
+            <button onClick={populateRecipe}> Populate Recipe</button>
         </main>
     );
 }
+
+function populateRecipe() {
+    getRecipe().then(response => {
+        testCard.recipeTitle = response.data.recipeTitle;
+        console.log('please work')
+    })
+    
+    /* catPic() {
+
+        const options = {
+            method: 'GET',
+            url: 'https://api.thecatapi.com/v1/images/search',
+          };
+    
+    axios.request(options).then(response2 => {
+        testCard.recipeImageURL = response2.data
+    });
+      } */
+}
+
+
+
 
 export default RecipeCard;

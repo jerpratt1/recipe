@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState, useEffect } from 'react';
 
 export const recipeCard =
 {
@@ -17,20 +15,17 @@ export const recipeCard =
     keyWords: "test keywords"
 }
 
-export const GetRecipe = () => {
-    const [posts, setPosts] = useState([]);
-
-   useEffect(() => {
-      axios
-         .get('http://localhost:9000/recipe')
-         .then((response) => {
-            setPosts(response.data);
-         })
-         .catch((err) => {
-            console.log(err);
-         });
-   }, []);
-
-
-    return posts;
+export let testCard ={
+   recipeTitle: "",
+    recipeImageURL: "",
+    recipeDescription: "",
+    prepTime: 0,
+    cookTime: 0,
+    restTime: 0,
+    servingSize: 0,
+    tools: "",
+    ingredients: "",
+    instructions: "",
+    notes: "",
+    keyWords: ""
 }
