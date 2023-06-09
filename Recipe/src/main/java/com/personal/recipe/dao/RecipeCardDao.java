@@ -6,7 +6,7 @@ public interface RecipeCardDao {
 
     RecipeCard getRecipe();
 
-    RecipeCard addRecipe();
+    RecipeCard addRecipe(RecipeCard recipeCard);
 
     RecipeCard updateRecipe();
 

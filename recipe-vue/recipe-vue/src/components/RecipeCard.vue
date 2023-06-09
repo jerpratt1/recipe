@@ -4,7 +4,6 @@
     <div id="recipe-card">
       <div id="top">
         <h1>{{this.recipe.recipeTitle}}</h1>
-        <a v-bind:href="''"> {{ this.recipe.recipeImageURL }} </a>
         <h2>{{this.recipe.recipeDescription}}</h2>
       </div>
       <div id="info">
@@ -34,7 +33,6 @@ export default {
     return {
       recipe: {
         recipeTitle: "",
-        recipeImageURL: "",
         recipeDescription: "",
         prepTime: "",
         cookTime: "",
@@ -53,7 +51,6 @@ export default {
     populateRecipe() {
         RecipeService.getRecipe().then((response) =>{
             this.recipe.recipeTitle = response.data.recipeTitle;
-            this.recipe.recipeImageURL = response.data.recipeImageURL;
             this.recipe.recipeDescription = response.data.recipeDescription;
             this.recipe.prepTime = response.data.prepTime;
             this.recipe.cookTime = response.data.cookTime;

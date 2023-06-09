@@ -2,7 +2,6 @@ package com.personal.recipe.model;
 
 public class RecipeCard {
     private String recipeTitle;
-    private String recipeImageURL;
     private String recipeDescription;
     private int prepTime;
     private int cookTime;
@@ -18,9 +17,8 @@ public class RecipeCard {
 
     }
 
-    public RecipeCard(String recipeTitle, String recipeImageURL, String recipeDescription, int prepTime, int cookTime, int restTime, int servingSize, String tools, String ingredients, String instructions, String notes, String keyWords) {
+    public RecipeCard(String recipeTitle, String recipeDescription, int prepTime, int cookTime, int restTime, int servingSize, String tools, String ingredients, String instructions, String notes, String keyWords) {
         this.recipeTitle = recipeTitle;
-        this.recipeImageURL = recipeImageURL;
         this.recipeDescription = recipeDescription;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
@@ -39,14 +37,6 @@ public class RecipeCard {
 
     public void setRecipeTitle(String recipeTitle) {
         this.recipeTitle = recipeTitle;
-    }
-
-    public String getRecipeImageURL() {
-        return recipeImageURL;
-    }
-
-    public void setRecipeImageURL(String recipeImageURL) {
-        this.recipeImageURL = recipeImageURL;
     }
 
     public String getRecipeDescription() {

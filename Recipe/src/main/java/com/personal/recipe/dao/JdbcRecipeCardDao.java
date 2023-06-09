@@ -28,8 +28,16 @@ public class JdbcRecipeCardDao implements RecipeCardDao {
     }
 
     @Override
-    public RecipeCard addRecipe() {
-        return null;
+    public RecipeCard addRecipe(RecipeCard recipeCard) {
+        String sql = "INSERT INTO recipe (recipe_title, recipe_description, prep_time," +
+                " cook_time, rest_time, serving_size, tools, ingredients, instructions, notes, keywords)" +
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) returning recipe_id";
+        Integer recipeId = jdbcTemplate.queryForObject(sql, Integer.class, recipeCard.getRecipeTitle(),
+                recipeCard.getRecipeDescription(), recipeCard.getPrepTime(), recipeCard.getCookTime(),
+                recipeCard.getRestTime(), recipeCard.getServingSize(), recipeCard.getTools(),
+                recipeCard.getIngredients(), recipeCard.getInstructions(), recipeCard.getNotes(), recipeCard.getKeyWords());
+
+        return recipeCard;
     }
 
     @Override
@@ -46,7 +54,6 @@ public class JdbcRecipeCardDao implements RecipeCardDao {
         RecipeCard recipeCard = new RecipeCard();
 
         recipeCard.setRecipeTitle(result.getString("recipe_title"));
-        recipeCard.setRecipeImageURL(result.getString("recipe_image_url"));
         recipeCard.setRecipeDescription(result.getString("recipe_description"));
         recipeCard.setPrepTime(result.getInt("prep_time"));
         recipeCard.setCookTime(result.getInt("cook_time"));

@@ -3,10 +3,7 @@ package com.personal.recipe.controller;
 import com.personal.recipe.dao.RecipeCardDao;
 import com.personal.recipe.model.RecipeCard;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
@@ -22,8 +19,9 @@ public class RecipeCardController {
     }
 
     @RequestMapping(path = "/recipe", method = RequestMethod.POST)
-    public RecipeCard addRecipe() {
-        return null;
+    public RecipeCard addRecipe(@RequestBody RecipeCard recipeCard) {
+        RecipeCard newCard = recipeCardDao.addRecipe(recipeCard);
+        return newCard;
     }
 
     @RequestMapping(path = "/recipe", method = RequestMethod.PUT)
