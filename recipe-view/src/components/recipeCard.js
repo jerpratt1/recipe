@@ -1,6 +1,5 @@
 import { recipeCard, testCard } from '../Data';
 import getRecipe from '../RecipeService'
-/* import axios from 'axios'; */
 
 function RecipeCard( ) {
     return (
@@ -32,18 +31,6 @@ function populateRecipe() {
         testCard.recipeTitle = response.data.recipeTitle;
         console.log('please work')
     })
-    
-    /* catPic() {
-
-        const options = {
-            method: 'GET',
-            url: 'https://api.thecatapi.com/v1/images/search',
-          };
-    
-    axios.request(options).then(response2 => {
-        testCard.recipeImageURL = response2.data
-    });
-      } */
 }
 
 
