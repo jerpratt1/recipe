@@ -1,5 +1,4 @@
 package com.personal.recipe.model;
-
 public class RecipeCard {
     private String recipeTitle;
     private String recipeDescription;

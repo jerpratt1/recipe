@@ -11,15 +11,19 @@
           <li>Prep Time: {{this.recipe.prepTime}}</li>
           <li>Cook Time: {{this.recipe.cookTime}}</li>
           <li>Rest Time: {{this.recipe.restTime}}</li>
-          <li>Yield {{this.recipe.servingSize}}</li>
+          <li>Yield: {{this.recipe.servingSize}}</li>
         </ul>
       </div>
       <div id="main-recipe">
-        <span>{{this.recipe.tools}}</span>
-        <span>{{this.recipe.ingredients}}</span>
-        <span>{{this.recipe.instructions}}</span>
-        <span>{{this.recipe.notes}}</span>
-        <span>{{this.recipe.keyWords}}</span>
+        <hr/>
+        <span>Tools: {{this.recipe.tools}} <br/></span>
+        <hr/>
+        <span>Ingredients: <br/>{{this.recipe.ingredients}}<br/></span>
+        <span>Instructions: <br/>{{this.recipe.instructions}}<br/></span>
+        <hr/>
+        <span>Notes: <br/>{{this.recipe.notes}}<br/></span>
+        <span>Keywords: {{this.recipe.keyWords}}</span>
+        
       </div>
     </div>
     <button v-on:click='populateRecipe'> populate recipe </button>
@@ -68,14 +72,16 @@ export default {
 
 <style scoped>
 #recipe-card{
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: whitesmoke;
+  min-height: 90vh;
+  min-width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  border: gray solid 3px;
+  border-radius: 30px;
+  padding: 10px;
 }
 
 #main{
@@ -95,9 +101,10 @@ export default {
   list-style-type: none;
 }
 
-#info > li{
+ul > li{
   padding: 3px;
-  margin-left: 3px;
+  margin: 5px;
   border: gray solid 3px;
+  border-radius: 10px;
 }
 </style>

@@ -132,6 +132,10 @@ grid-template-areas:
  "keywords keywords keywords"
  "button button button"
 ;
+background: #282c34;
+height: 100vh;
+max-width: 100%;
+color: white;
 }
 
 .text{
