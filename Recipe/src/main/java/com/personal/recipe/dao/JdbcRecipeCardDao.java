@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class JdbcRecipeCardDao implements RecipeCardDao {
 
@@ -24,6 +27,18 @@ public class JdbcRecipeCardDao implements RecipeCardDao {
             return recipeCard;
         }
         return null;
+    }
+
+    @Override
+    public List<RecipeCard> getAllRecipe() {
+        List <RecipeCard> cards = new ArrayList<>();
+        String sql = "SELECT * FROM recipe;";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+        while(result.next()){
+            RecipeCard recipeCard = mapRowToTransferForRecipeCard(result);
+            cards.add(recipeCard);
+        }
+        return cards;
 
     }
 

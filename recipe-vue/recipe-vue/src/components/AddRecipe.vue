@@ -108,8 +108,8 @@
         <div v-for="note in noteList" v-bind:key="note.id">{{ note }}</div>
       </div>
       <div id="keywords">
-        <label for="keywords"
-          >Keywords: <br /><input
+        <label for="keywords">
+          Keywords: <br /><input
             type="text"
             name="keywords"
             class="text"

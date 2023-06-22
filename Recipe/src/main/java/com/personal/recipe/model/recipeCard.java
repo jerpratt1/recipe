@@ -1,4 +1,7 @@
 package com.personal.recipe.model;
+
+import java.util.List;
+
 public class RecipeCard {
     private String recipeTitle;
     private String recipeDescription;

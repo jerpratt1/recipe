@@ -5,6 +5,10 @@ import com.personal.recipe.model.RecipeCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @CrossOrigin
 public class RecipeCardController {
@@ -16,6 +20,13 @@ public class RecipeCardController {
     public RecipeCard getRecipe() {
         RecipeCard recipeCard = recipeCardDao.getRecipe();
         return recipeCard;
+    }
+
+    @RequestMapping(path = "/box", method = RequestMethod.GET)
+    public List <RecipeCard> getAllRecipe() {
+        List <RecipeCard> cards = new ArrayList<>();
+        cards = recipeCardDao.getAllRecipe();
+        return cards;
     }
 
     @RequestMapping(path = "/recipe", method = RequestMethod.POST)
