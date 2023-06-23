@@ -1,10 +1,11 @@
 <template>
   <div>
     <label for="title" id="title">
-        Recipe Title: <br /><input type="text" name="title" class="text" v-model="this.recipeTitle"/>
+        Recipe Title: <br /><input type="text" name="title" class="text" v-model="recipeTitle" readonly=false/>
     </label>
+    <br/>
     <label for="description" id="description">
-        Recipe Description: <br /><input type="text" name="description" class="text" v-model="this.recipeDescription"/>
+        Recipe Description: <br /><input type="text" name="description" class="text" v-model="recipeDescription"/>
     </label>
     <div id="keywords">
         <label for="keywords">
@@ -17,6 +18,7 @@
           {{ keyWord }}
         </div>
       </div>
+      <button v-on:click="setTitleDescriptionKeyWords">Next</button>
   </div>
 </template>
 

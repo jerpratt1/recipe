@@ -1,11 +1,15 @@
 <template>
-  <add-recipe />
+  <div>
+    <add-recipe-title />
+    <add-recipe-info />
+  </div>
 </template>
 
 <script>
-import AddRecipe from '@/components/AddRecipe.vue'
+import AddRecipeTitle from '@/components/AddRecipeTitle.vue'
+import AddRecipeInfo from '@/components/AddRecipeInfo.vue'
 export default {
-    components: { AddRecipe },
+    components: { AddRecipeTitle, AddRecipeInfo},
 
 }
 </script>

@@ -37,6 +37,22 @@ export default new Vuex.Store({
       this.state.recipeToSubmit.keyWords = keyWords;
     },
 
+    SET_PREP(prepTime){
+      this.state.recipeToSubmit.prepTime = prepTime;
+    },
+    
+    SET_COOK(cookTime){
+      this.state.recipeToSubmit.cookTime = cookTime;
+    },
+    
+    SET_REST(restTime){
+      this.state.recipeToSubmit.restTime = restTime;
+    },
+    
+    SET_SERVING(servingSize){
+      this.state.recipeToSubmit.servingSize = servingSize;
+    },
+
 
   },
   actions: {
